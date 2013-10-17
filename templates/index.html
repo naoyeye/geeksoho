@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeekSOHO</title>
+    <meta name="keywords" content="soho,job,china,远程办公,soho职位,soho工作"/>
+    <meta name="description" content="GeekSOHO - 寻SOHO工作，找SOHO大牛，上GeekSOHO！" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="stylesheet" href="static/css/typo.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web|Raleway:100,200,300|Londrina+Shadow' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        html{height: 100%;}
+        body{background: #b8dbd1 url(static/img/Blur-2.jpg) center center no-repeat;background-size: cover;height: 100%;font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;}
+        a{color: #fff;-webkit-transition: 0.4s; -moz-transition: 0.4s;transition: 0.4s;}
+        a:hover{color: #c00;text-decoration: none;-webkit-transition: 0.4s; -moz-transition: 0.4s;transition: 0.4s;}
+        #geeksoho{display: none;height: 100%;}
+        section h1{ display: inline-block; vertical-align: middle; padding:10px 10px 10px 60px;background: rgba(255,255,255,.74) url(static/img/logo-40x40.png) 10px center no-repeat; border-radius: 5px; text-align: left;color: #bdc3c7; font-size: 30px; font-family: 'Londrina Shadow', "Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 400;letter-spacing: 3px;text-shadow:none;}
+
+        article{height: 100%;width: 100%;display:table;}
+        section{font-size: 40px;padding: 0;margin: 0; color: #fff;vertical-align:middle;display:table-cell;text-align: center;text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);color: #fff;}
+        /*section h1{margin-top: -40px; font-family: 'Raleway', sans-serif;font-weight: 100; font-size: 70px;line-height: 110px;color: #fff;}*/
+        /*section h1:hover{opacity: 0.5;-webkit-transition: 0.4s; -moz-transition: 0.4s;transition: 0.4s;}*/
+        section p{font-size: 16px;margin-bottom: 40px; margin-top: 30px; text-shadow:none;font-family: 'Raleway', sans-serif; font-weight: 400; letter-spacing: 1px;}
+        section p.preview a{color: #7bcaa5}
+        a#blog_link{display: inline-block; position: fixed; right: 20px; top: 20px; padding: 3px 5px;font-size: 12px;font-family: 'Raleway', sans-serif; background: rgba(255,255,255,0.2); z-index: 2;border-radius: 5px;}
+        section span{font-size: 12px;text-shadow:none;opacity: 0.9;text-shadow:0 1px 0px rgba(0,0,0,0.2);font-family: 'Raleway', sans-serif;font-weight: 200;}
+        @media screen and (max-width: 900px) {
+            a#blog_link{display: none;}
+            #interface{display: none;}
+        }
+        
+
+    </style>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-43979949-1', 'geeksoho.com');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<div id="geeksoho">
+    <article>
+        <section>
+            <h1>GeekSOHO</h1>
+            <p>Coming Soon</p>
+            <p class="preview"><a href="/prototype.html" title="DEMO Preview"><i class="icon-eye-open"></i></a></p>
+        </section>
+    </article>
+</div>
+    <script type="text/javascript">
+
+    //application
+    $(function(){
+        $('#geeksoho').fadeIn(1500);
+
+        //Egg hunt :)
+        var s = 0;
+        var sh;
+
+        $('body').click(function(){
+            if(s == 0){
+                sh = setInterval(flicker,5000);
+                s = 1;
+            }else{
+                clearInterval(sh);
+            }
+        });
+        function flicker(){
+            $('h1').fadeOut(2250).fadeIn(2750);
+        }
+    })
+    </script>
+</body>
+</html>
+

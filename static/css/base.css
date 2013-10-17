@@ -1,0 +1,297 @@
+html,body{background: #ecf0f1;height: 100%;}
+ul,li{margin: 0;padding:0;list-style: none;}
+a{color: #7f8c8d;-webkit-transition: 0.4s; -moz-transition: 0.4s;transition: 0.4s;}
+a:hover, a:focus{color: #1abc9c;text-decoration: none;-webkit-transition: 0.4s; -moz-transition: 0.4s;transition: 0.4s;}
+a[target^="_blank"]{
+    background:url(../img/ExternalLink.gif) no-repeat right center;
+    padding-right:12px;
+}
+#geeksoho{height: 100%;width: 600px;margin: 0 auto;}
+header{padding: 20px 0;}
+header h1{display: inline-block;vertical-align: middle; margin: 0;}
+header h1 a{ display: inline-block; vertical-align: middle; padding:10px 10px 10px 60px;background: #fff url(../img/logo-40x40.png) 10px center no-repeat; border-radius: 5px; text-align: left;color: #bdc3c7; font-size: 30px; font-family: 'Londrina Shadow', "Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 400;letter-spacing: 3px;}
+header h1 a:hover{background-color: #f19d92;color: #fff;}
+header p{ display: inline-block; padding: 0px 10px 0 10px; margin: 0; vertical-align: middle; color:#bdc3c7; font-weight: normal;}
+
+nav{
+    margin-bottom:15px;
+    -webkit-perspective:500px;
+    -moz-perspective:500px;
+    perspective:500px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+nav .publishHeader{overflow: hidden;background: #fdf0bf;position: relative;z-index: 2;}
+nav .publishHeader p{float: left;height: 50px;line-height: 50px;margin-bottom: 0;padding: 0 10px;color: #917409;}
+nav .publishHeader a.newJobBtn{ background: #7bcaa5;float: right; display: block; height: 50px; width: 50px;text-align: center;line-height: 50px;color: #fff;font-size: 24px;outline: none;}
+nav .publishHeader a.newJobBtn:hover{background: #6db493}
+
+    .publishBody{
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        max-height:0px;
+        overflow: hidden;
+        -moz-transform:rotateX(-100deg);
+        -webkit-transform:rotateX(-100deg);
+
+        -webkit-transform-style:preserve-3d;
+        -moz-transform-style:preserve-3d;
+        transform-style:preserve-3d;
+
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+
+        -webkit-transition: all .6s;
+        -moz-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+    }
+
+    .publishBody.opened {
+        max-height:400px;
+        -moz-transform:rotateX(0deg);
+        -webkit-transform:rotateX(0deg);
+    }
+
+    .publishBody form{padding: 30px;}
+
+#listWrap{min-height: 450px;}
+#listWrap ul li{
+    position: relative;
+    margin-bottom: 5px;
+    -webkit-perspective:500px;
+    -moz-perspective:500px;
+    perspective:500px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+#listWrap ul li .listHead{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    background: #fff;
+}
+
+#listWrap ul li a{
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+.salary{float: left; display: block; height: 50px; width: 50px; background: #b581bc;text-align: center;line-height: 50px;color: #fff;font-size: 30px; font-family: "Helvetica", serif;}
+.title,
+.organization{display: block;zoom:1;height: 50px;line-height: 50px;font-size: 12px;}
+.title{ float: left; min-width: 140px; padding:0 10px;  max-width: 280px;font-size: 16px;overflow: hidden;text-overflow:ellipsis;}
+.title a{cursor:pointer;}
+.organization{ float: right; display: inline; width: 80px;padding:0 10px;  text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+.time,
+.location{float: right;display: inline-block; padding: 0 10px; zoom:1;height: 50px;line-height: 50px;color: #bbb;font-size: 12px;}
+.time{width: 100px;text-align: right;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+.location{width: 80px;text-align: right;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+
+
+#listWrap ul li .sub {
+    position: relative;
+    z-index: 1;
+    max-height:0px;
+    overflow: hidden;
+    background:#e1e8e5;
+
+    -moz-transform:rotateX(-100deg);
+    -webkit-transform:rotateX(-100deg);
+
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
+
+#listWrap ul li .sub .subInner{
+    padding: 20px;
+}
+
+#listWrap ul li .sub:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -o-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#listWrap ul li.opened .sub {
+    /*height: auto;*/
+    /*min-height:100px;*/
+    max-height:1000px;
+    background: #fff;
+    background: rgba(255,255,255,0.5);
+    -moz-transform:rotateX(0deg);
+    -webkit-transform:rotateX(0deg);
+}
+
+
+#listWrap ul li .sub .subInner h2{
+    margin:0 0 10px 0;
+}
+
+footer{text-align: center;font-size: 12px;padding: 20px 0;color: #bbb;font-weight: normal;}
+
+
+#loadingWraper{
+    width: 100%;
+    height: 5px;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 12;
+    background: #27ae60;
+}
+
+#loadingWraper #landLoading{
+    width: 50%;
+    height: 5px;
+    background: #fff;
+    opacity: 0.2;
+    position: absolute;
+    -moz-animation: fullexpand 1.5s infinite ease-out;
+    -webkit-animation: fullexpand 1.5s infinite ease-out;
+    -o-animation: fullexpand 1.5s infinite ease-out;
+}
+
+/* Full Width Animation Bar */
+@-moz-keyframes fullexpand {
+    0%{
+        margin-left:-50%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+}
+
+@-webkit-keyframes fullexpand {
+    0%{
+        margin-left:-50%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+}
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    body{background: yellow;}
+    #geeksoho:before{
+        content: '111111';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /*body{background: red;}*/
+    #geeksoho:before{
+        content: '222222';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    body{background: black;}
+    #geeksoho:before{
+        content: '33333';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    body{background: blue;}
+    #geeksoho:before{
+        content: '44444';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    body{background: green;}
+    #geeksoho:before{
+        content: '55555';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    body{background: purple;}
+    #geeksoho:before{
+        content: '66666';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+
+    #geeksoho:before{
+        content: '77777';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    body{background: #BC8F8F;}
+    #geeksoho:before{
+        content: '88888';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+}
+  
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+    body{background: #F08080;}
+    #geeksoho:before{
+        content: '99999';
+        position: fixed;
+        top:0;
+        left:0;
+    }
+} 

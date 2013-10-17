@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} | GEEKSOHO</title>
+    <meta name="keywords" content="soho,job,china,远程办公,soho职位,soho工作"/>
+    <meta name="description" content="GEEKSOHO - 找SOHO工作，上GEEKSOHO！" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="stylesheet" href="static/css/typo.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="static/css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+    <link rel="stylesheet" href="static/css/base.css" />
+    <script type="text/javascript" src="static/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.pjax.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web|Londrina+Shadow' rel='stylesheet' type='text/css'>
+    <script>
+        // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        // ga('create', 'UA-43979949-1', 'geeksoho.com');
+        // ga('send', 'pageview');
+    </script>
+</head>
+<body vocab="http://schema.org">
+<div id="geeksoho">
+    <header>
+        <h1><a href="/test">GEEKSOHO</a></h1>
+        <p>找SOHO工作，上GEEKSOHO！</p>
+    </header>
+
+    <nav>
+        <div class="publishHeader">
+            <p><i class="icon-exclamation-sign"></i> 发布新的职位需要注意的事项</p>
+            <a href="javascript:void(0)" class="newJobBtn"><i class="icon-plus"></i></a>
+        </div>
+        <div class="publishBody">
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Check me out
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="listWrap">
+    {% block content %}{% endblock %}
+    </div>
+    <footer>
+        &copy; 2013
+    </footer>
+
+    <div id="loadingWraper">
+        <div id="landLoading"></div>
+    </div>
+</div>
+    
+    <script type="text/javascript" src="static/js/jquery.timeago.js"></script>
+    <script type="text/javascript" src="static/js/application.js"></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            $('#loadingWraper').fadeOut(200);
+        }; 
+    </script>
+</body>
+</html>
+
