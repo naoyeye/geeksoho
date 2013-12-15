@@ -13,45 +13,27 @@
 import os
 import web
 import rediswebpy
-# from jinja2 import Environment,FileSystemLoader
 from web.contrib.template import render_jinja
+import misc
 
-render = render_jinja(
-    'templates',   # 设置模板路径.
-    encoding = 'utf-8', # 编码.
-)
 
-# def render_template(template_name, **context):
-#     extensions = context.pop('extensions', [])
-#     globals = context.pop('globals', {})
-
-#     jinja_env = Environment(
-#             loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
-#             extensions=extensions,
-#             )
-#     jinja_env.globals.update(globals)
-#     return jinja_env.get_template(template_name).render(context)
+db = web.database(dbn='mysql', db='geeksoho', user='geeksoho', passwd='geeksoho')
 
 
 
-urls = (
-    '/',         'index',
-    '/test',     'test'
-)
-
-# def pjax(template):
-#     """Test whether the request was with PJAX or not."""
-#     if web.ctx.environ.get('HTTP_X_PJAX'):
-#         return render_template(template)
-#     else:
-#         return render_template("layout.html", template=template)
-
-
+# controllers
+# ===============
 class index:
     """Home"""
     def GET(self):
         # return pjax('jobs.html')
-        return render.jobs()
+        jobsList = GetJobs()
+        return render.jobs(jobsList=jobsList)
+
+    def POST(self):
+        data = web.input(title='', link='', company='', company_weibo='', company_website='', city='', salary='', intro='')
+        CreatNewJob(data)
+        raise web.seeother('/')
 
 class test:
     """test"""
@@ -59,9 +41,55 @@ class test:
         # return pjax('test.html')
         return render.test()
 
+
+# models
+# =============
+
+def CreatNewJob(data):
+
+    db.insert(
+        'jobs',
+        title = data.title,
+        link = data.link,
+        company = data.company,
+        company_weibo = data.company_weibo,
+        company_website = data.company_website,
+        city = data.city,
+        salary = data.salary,
+        intro = data.intro)
+
+
+def GetJobs():
+    return  db.select('jobs', limit = 100, order='id DESC')
+
+
+
+myFilters = {'filesizeformat': iredutils.filesizeformat,}
+
+render._lookup.filters.update(myFilters)
+
+globals = get_all_functions(misc)
 app = web.application(urls, globals())
 web.config.debug = True
+cache = False
 session = web.session.Session(app, rediswebpy.RedisStore(), initializer={'count': 0})
+
+render = render_jinja(
+    'templates',   # 设置模板路径.
+    encoding = 'utf-8', # 编码.
+    cache=cache,
+    
+)
+
+render._lookup.globals.update(
+   globals=globals
+)
+
+urls = (
+    '/',         'index',
+    '/test',     'test'
+)
+
 
 if __name__ == "__main__":
     

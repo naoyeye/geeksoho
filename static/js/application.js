@@ -3,10 +3,13 @@ $(function(){
 
     // $(document).pjax('a.pjax', '#listWrap', {
     //     timeout: 3000
+
     // });
 
     // $(document).on('pjax:send', function() {
-    //     $('#loadingWraper').show();
+    //     // $('#loadingWraper').show();
+    //     console.log(1)
+    //     return false;
     // })
     // $(document).on('pjax:complete', function() {
     //     $('#loadingWraper').hide()
