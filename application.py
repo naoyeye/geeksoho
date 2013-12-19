@@ -21,6 +21,13 @@ db = web.database(dbn='mysql', db='geeksoho', user='geeksoho', passwd='geeksoho'
 
 
 
+urls = (
+    '/',         'index',
+    '/test',     'test'
+)
+
+
+
 # controllers
 # ===============
 class index:
@@ -64,11 +71,9 @@ def GetJobs():
 
 
 
-myFilters = {'filesizeformat': iredutils.filesizeformat,}
 
-render._lookup.filters.update(myFilters)
 
-globals = get_all_functions(misc)
+# globals = get_all_functions(misc)
 app = web.application(urls, globals())
 web.config.debug = True
 cache = False
@@ -77,18 +82,13 @@ session = web.session.Session(app, rediswebpy.RedisStore(), initializer={'count'
 render = render_jinja(
     'templates',   # 设置模板路径.
     encoding = 'utf-8', # 编码.
-    cache=cache,
     
 )
 
-render._lookup.globals.update(
-   globals=globals
-)
+myFilters = {'filter_tags': misc.filter_tags,}
 
-urls = (
-    '/',         'index',
-    '/test',     'test'
-)
+render._lookup.filters.update(myFilters)
+
 
 
 if __name__ == "__main__":

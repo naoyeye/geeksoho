@@ -6,7 +6,8 @@
 # TODO:
 # - we should subclass form.Form instead.
 
-import web, re, urlparse, datetime, urllib, utils, string, time, datetime
+import web, re, urlparse, datetime, string, time, datetime
+# import urllib
 
 # import HTMLParser
 
@@ -21,13 +22,13 @@ def url_quote(url):
 def html_quote(html):
     return web.htmlquote(html)
 
-def url_encode(query, clean=True, doseq=True, **kw):
-    query = web.dictadd(query, kw)
-    if clean is True:
-        for q, v in query.items():
-            if not v:
-                del query[q]
-    return urllib.urlencode(query, doseq)
+# def url_encode(query, clean=True, doseq=True, **kw):
+#     query = web.dictadd(query, kw)
+#     if clean is True:
+#         for q, v in query.items():
+#             if not v:
+#                 del query[q]
+#     return urllib.urlencode(query, doseq)
 
 def cut_length(s, max=40, tooltip=False):
     s_cut = s[0:]

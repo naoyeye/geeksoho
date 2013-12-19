@@ -14,7 +14,7 @@
                     <span class="title">
                         <a property="title" title="{{ job.title }}">{{ job.title }}</a>
                     </span>
-                    <span class="time" class="time" property="datePosted" title="{{ job.date_create }}">{{ job.date_create }}</span>
+                    <span class="time" property="datePosted" title="{{ job.date_create }}">{{ job.date_create }}</span>
                     <span class="location" class="location" property="jobLocation">{{ job.city }}</span>
                     <span class="organization">
                         {% if job.company_website %}
@@ -39,7 +39,7 @@
                                 {% endif %}
                             </p>
                             <p>
-                                {{ job.intro|text2html }}
+                                {{ job.intro|filter_tags }}
                             </p>
                         </div>
                     </div>
